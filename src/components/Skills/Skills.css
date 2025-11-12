@@ -1,0 +1,242 @@
+/* ================= SKILLS SECTION ================= */
+.skills-section {
+  padding: 80px 8%;
+  background: #06283D;
+  color: #fff;
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Section heading at top */
+.skills-heading {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.skills-heading span {
+  color: #00E5FF;
+}
+
+.skills-section.show-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wrapper */
+.skills-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ================= LEFT SIDE ================= */
+.technical-skills {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.technical-skills h3 {
+  text-align: left; 
+  font-size: 24px;
+  border-bottom: 2px solid #ffffff4a;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 35px;
+}
+
+/* Skill bars */
+.skill-bar {
+  margin: 25px 0; 
+}
+
+.skill-bar .info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 100%;
+  height: 12px;
+  background: #0D1B2A;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #00E5FF, #00BFFF);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00bfff;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Animate Bars On Scroll */
+.show-animate .line.html::before { width: 90%; transition-delay: 0s; }
+.show-animate .line.css::before { width: 80%; transition-delay: 0.1s; }
+.show-animate .line.js::before { width: 85%; transition-delay: 0.2s; }
+.show-animate .line.react::before { width: 75%; transition-delay: 0.3s; }
+.show-animate .line.python::before { width: 70%; transition-delay: 0.4s; }
+
+/* ================= RIGHT SIDE — CIRCULAR SKILLS ================= */
+.professional-skills {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.professional-skills h3 {
+  text-align: left; 
+  font-size: 24px;
+  border-bottom: 2px solid #ffffff4a;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 35px;
+}
+
+.circle-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.circle {
+  text-align: center;
+  margin: 30px;
+  width: 140px;
+  transition: 0.3s ease;
+}
+
+.circle:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= BLUE RING — THICKNESS RESPONSIVE ================= */
+.progress-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #0D1B2A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 35px #00e5ff;
+}
+
+.progress-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 12px; /* <- DEFAULT RING THICKNESS */
+  background: conic-gradient(
+    #00E5FF 0deg,
+    #00E5FF var(--value, 0deg),
+    transparent var(--value, 0deg)
+  );
+}
+
+.progress-inner {
+  width: 96px; /* fits inside the ring */
+  height: 96px;
+  border-radius: 50%;
+  background: #06283D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+
+.progress-wrapper:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff, 0 0 60px #00e5ff;
+}
+
+/* Circle label */
+.circle h4 {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .technical-skills,
+  .professional-skills {
+    width: 100%;
+  }
+
+  .circle-box {
+    justify-content: center;
+  }
+
+  .circle {
+    margin: 20px;
+  }
+
+  .technical-skills h3,
+  .professional-skills h3 {
+    text-align: center;
+  }
+
+  /* ===== ADJUST BLUE RING ON SMALL SCREENS ===== */
+  .progress-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress-wrapper::before {
+    padding: 10px; /* slightly thinner for small screens */
+  }
+
+  .progress-inner {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .progress-wrapper::before {
+    padding: 8px; /* thinner on very small screens */
+  }
+
+  .progress-inner {
+    width: 74px;
+    height: 74px;
+    font-size: 18px;
+  }
+}
+
+
+/* Reset skill bars width when section leaves viewport */
+.skills-section:not(.show-animate) .line::before {
+  width: 0 !important;
+}

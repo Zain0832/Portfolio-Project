@@ -1,0 +1,236 @@
+
+
+.about {
+  width: 100%;
+  background: #07182e;
+  color: #e5e9ec;
+  padding: 100px 3rem;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;   /* image left, text right */
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #14e6ff;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #9eb4c8;
+  margin-bottom: 1.5rem; /* ↑ Increased for better spacing */
+}
+.about-text1 h3{
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #9eb4c8;
+}
+
+/* BUTTONS ROW */
+.button-row {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+.about-text .btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(90deg, #14e6ff, #7b00ff, #ff00c8);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.about-text .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #14e6ff, 0 0 25px #ff00c8;
+}
+
+/* Image Glow */
+.glow-ring-about {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(#14e6ff, #7b00ff, #ff00c8, #14e6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 25px #3dffffa0);
+  transition: 0.3s ease;
+}
+
+.glow-ring-about:hover {
+  filter: drop-shadow(0 0 40px #14e6ff);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #07182e;
+  object-fit: cover;
+  border: 4px solid #07182e;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .glow-ring-about {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 2.4rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .button-row {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.2rem;
+  }
+}
+
+
+
+
+
+/* Detailed section inside About */
+.about-more-details {
+  margin-top: 1rem;
+  line-height: 1.6rem;
+  color: #9eb4c8;
+}
+
+.about-more-details h3 {
+  color: #14e6ff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Optional: add transition effect */
+.about-more-details {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Wrapper for smooth animation */
+.more-about-wrapper {
+  max-height: 0;        /* collapsed */
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0 3rem;      /* optional padding */
+}
+
+/* Expanded state */
+.more-about-wrapper.open {
+  max-height: 1000px;   /* adjust to fit content */
+  padding: 2rem 3rem;   /* optional padding when open */
+}
+
+/* Optional: style the MoreAbout content */
+.more-about {
+  background: #07182e;
+  color: #e5e9ec;
+  border-top: 1px solid #14e6ff;
+}
+
+.more-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6rem;
+}
+
+.more-about h2 {
+  color: #14e6ff;
+  margin-bottom: 1rem;
+}
+
+.more-about h3 {
+  color: #7b00ff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.more-about p {
+  margin-bottom: 0.7rem;
+  color: #9eb4c8;
+}
+
+
+
+
+/* Wrapper for smooth animation */
+.more-about-wrapper {
+  max-height: 0;         /* collapsed */
+  opacity: 0;            /* invisible when collapsed */
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.6s ease;
+  padding: 0 3rem;       /* optional padding */
+}
+
+/* Expanded state */
+.more-about-wrapper.open {
+  max-height: 1000px;    /* adjust to fit content */
+  opacity: 1;            /* visible when open */
+  padding: 2rem 3rem;    /* optional padding when open */
+}
+
+/* MoreAbout content styling */
+.more-about {
+  background: #07182e;
+  color: #e5e9ec;
+  border-top: 1px solid #14e6ff;
+  transform: translateY(0);
+}
+
+.more-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6rem;
+  transition: transform 0.6s ease;
+}
+
+.more-about-wrapper.open .more-about-container {
+  transform: translateY(0); /* optional slide from top */
+}
+
+.more-about h2 {
+  color: #14e6ff;
+  margin-bottom: 1rem;
+}
+
+.more-about h3 {
+  color: #7b00ff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.more-about p {
+  margin-bottom: 0.7rem;
+  color: #9eb4c8;
+}
